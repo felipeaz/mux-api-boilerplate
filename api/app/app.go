@@ -20,11 +20,11 @@ func NewApp(handler domain.Handler) *App {
 
 func (app *App) InitializeRoutes() {
 	app.router.HandleFunc("/sample", app.handler.Get).Methods(http.MethodGet)
-	app.router.HandleFunc("/sample/{id}", app.handler.Find).Methods(http.MethodGet)
+	app.router.HandleFunc("/sample/{id:[0-9]+}", app.handler.Find).Methods(http.MethodGet)
 	app.router.HandleFunc("/sample", app.handler.Post).Methods(http.MethodPost)
-	app.router.HandleFunc("/sample/{id}", app.handler.Put).Methods(http.MethodPut)
-	app.router.HandleFunc("/sample/{id}", app.handler.Patch).Methods(http.MethodPatch)
-	app.router.HandleFunc("/sample/{id}", app.handler.Delete).Methods(http.MethodDelete)
+	app.router.HandleFunc("/sample/{id:[0-9]+}", app.handler.Put).Methods(http.MethodPut)
+	app.router.HandleFunc("/sample/{id:[0-9]+}", app.handler.Patch).Methods(http.MethodPatch)
+	app.router.HandleFunc("/sample/{id:[0-9]+}", app.handler.Delete).Methods(http.MethodDelete)
 }
 
 func (app *App) Run(addr string) {

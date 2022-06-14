@@ -2,11 +2,11 @@ package main
 
 import (
 	"log"
-	"mux-api-boilerplate/init"
+	"mux-api-boilerplate/init/application"
 )
 
 func main() {
-	err := init.Api()
+	err := application.Run()
 	if err != nil {
 		log.Fatal(err)
 	}

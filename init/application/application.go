@@ -1,4 +1,4 @@
-package init
+package application
 
 import (
 	"mux-api-boilerplate/api/app"
@@ -6,7 +6,7 @@ import (
 	"mux-api-boilerplate/internal/app/service"
 )
 
-func Api() error {
+func Run() error {
 	h := handler.NewHandler(
 		service.NewService(),
 	)
