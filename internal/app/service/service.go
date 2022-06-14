@@ -7,6 +7,10 @@ import (
 type Service struct {
 }
 
+func NewService() Service {
+	return Service{}
+}
+
 func (s Service) GetById(id string) (models.SampleModel, error) {
 	return models.NewSample(), nil
 }
